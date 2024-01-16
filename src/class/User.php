@@ -41,11 +41,11 @@ class User {
         global $db;
         $query = $db->prepare('INSERT INTO users (email, username, password, role, last_ip) VALUES(?, ?, ?, ?, ?)');
         $query->execute([
-            $user->email,
-            $user->username,
-            $user->password,
-            $user->role,
-            $user->last_ip
+            $this -> email,
+            $this -> username,
+            $this -> password,
+            $this -> role,
+            $this -> last_ip
         ]);
         return $db->lastInsertId();
     }
