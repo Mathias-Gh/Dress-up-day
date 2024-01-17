@@ -1,8 +1,18 @@
 <?php
 $title = 'home';
-ob_start();?>
-<?php
+ob_start();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les données envoyées par le client
+    $image = $_POST['image'];
+    $name = $_POST['name'];
+    $prix = $_POST['prix'];
+    $category = $_POST['category'];
+
+    // Instancier la classe Product et appeler la méthode insertProduct
+    $product = new Product();
+    $product->insertProduct($image, $name, $prix, $category);
+}
 ?>
 
 <div>
@@ -26,3 +36,9 @@ ob_start();?>
 </form>
 <?php
 $page_content = ob_get_clean();
+?>
+<script>
+    function browseFile() {
+        document.getElementById('fileInput').click();
+    }
+</script>
