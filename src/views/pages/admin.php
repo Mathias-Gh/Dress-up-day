@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $category = $_POST['category'];
 
     // Instancier la classe Product et appeler la méthode insertProduct
-    $product = new Product();
+    $product = new Product($db);
     $product->insertProduct($image, $name, $prix, $category);
 }
 ?>
