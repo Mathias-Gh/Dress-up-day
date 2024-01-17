@@ -11,3 +11,6 @@ require_once __DIR__ . '/class/User.php';
 
 // tous les utilitaires
 require_once __DIR__ . '/utils/error.php';
+
+//instancier les classes
+require_once __DIR__ . '/class/Product.php';

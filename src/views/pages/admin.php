@@ -1,27 +1,20 @@
 <?php
-$title = 'home';
+$title = 'admin';
 ob_start();
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'] ?? '';
-    $prix = $_POST['prix'] ?? '';
-    $category = $_POST['category'] ?? '';
+    // Récupérer les données envoyées par le client
+    $image = $_POST['image'];
+    $name = $_POST['name'];
+    $prix = $_POST['prix'];
+    $category = $_POST['category'];
 
-    // Handle file upload
-    if (isset($_FILES['fileInput']) && $_FILES['fileInput']['error'] === UPLOAD_ERR_OK) {
-        $image = $_FILES['fileInput']['name'];
-    } else {
-        $image = '';
-    }
     // Instancier la classe Product et appeler la méthode insertProduct
-    $product = new Product($db);
+    $product = new Product();
     $product->insertProduct($image, $name, $prix, $category);
 }
 ?>
+<div>PAGE ADMIN</div>
 
-<div>
-    PAGE HOME
-</div>
 <form method="post">
     <label for="fileInput">Sélectionner l'image de l'article à ajouter :</label>
     <input type="file" id="fileInput" name="fileInput" style="display: none;">
@@ -38,9 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit" onclick="insertProduct()">Validez votre article</button>
 </form>
-<?php
-$page_content = ob_get_clean();
-?>
+
 <script>
     function browseFile() {
         document.getElementById('fileInput').click();

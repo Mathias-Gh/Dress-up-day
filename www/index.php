@@ -17,8 +17,7 @@ require_once __DIR__ . '/../src/views/partials/footer.php';
 require_once __DIR__ . '/../src/views/pages/'. $page .'.php';
 
 require_once __DIR__ . '/../src/views/template.php';
-require_once __DIR__ . '/../src/db.php';
-require_once __DIR__ . '/../../src/class/produit.php';
+
 
 ?>
 

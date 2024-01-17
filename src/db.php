@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 try {
     $dsn = 'mysql:host=localhost; dbname=dressUpDay; port=8888';
     $db = new PDO($dsn, 'root', 'root');
