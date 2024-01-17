@@ -1,10 +1,28 @@
 <?php
-
 $title = 'home';
-
 ob_start();?>
+<?php
+
+?>
+
 <div>
     PAGE HOME
 </div>
+<form>
+    <label for="fileInput">Sélectionner l'image de l'article à ajouter :</label>
+    <input type="file" id="fileInput" name="fileInput" style="display: none;">
+    <button type="button" onclick="browseFile()">Chercher un fichier</button>
+
+    <label for="name">Rentrez le nom de l'article :</label>
+    <input type="text" id="name">
+
+    <label for="prix">Rentrez le prix de l'article</label>
+    <input type="text" id="prix">
+
+    <label for="category">Rentrez la categorie de l'article</label>
+    <input type="text" id="category">
+
+    <button type="submit" onclick="insertProduct()">Validez votre article</button>
+</form>
 <?php
 $page_content = ob_get_clean();
