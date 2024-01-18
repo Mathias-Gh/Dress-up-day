@@ -9,5 +9,6 @@ try {
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 }
 catch (Exception $e) {
+    echo $e->getMessage();
     die('Impossible de se connecter à la DB.');
 }

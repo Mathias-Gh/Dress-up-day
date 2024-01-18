@@ -21,6 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div>
     PAGE HOME
+    <?php
+
+    if(isset($_SESSION['id'])){?>
+    <form action="/actions/disconnect.php" method="post" class="deconnexion">
+        <input type="submit" class="btn" value="Deconnexion">
+    </form>
+    <?php } else{
+        echo 'buhuu';
+    }
+        ?>
+        
 </div>
 <form method="post">
     <label for="fileInput">Sélectionner l'image de l'article à ajouter :</label>
