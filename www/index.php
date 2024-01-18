@@ -11,9 +11,8 @@ if (isset($_GET['p'])) {
         $page = '404';
     }
 }
-
 require_once __DIR__ . '/../src/views/partials/navbar.php';
 require_once __DIR__ . '/../src/views/partials/footer.php';
-require_once __DIR__ . '/../src/views/pages/'. $page .'.php';
-
+require_once __DIR__ . '/../src/views/pages/'. $page .'.php';?>
+<link rel="stylesheet" href="/assets/css/register.css"><?php
 require_once __DIR__ . '/../src/views/template.php';
