@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ?>
         
 </div>
-<form method="post">
+<!-- <form method="post">
     <label for="fileInput">Sélectionner l'image de l'article à ajouter :</label>
     <input type="file" id="fileInput" name="fileInput" style="display: none;">
     <button type="button" onclick="browseFile()">Chercher un fichier</button>
@@ -56,4 +56,4 @@ $page_content = ob_get_clean();
     function browseFile() {
         document.getElementById('fileInput').click();
     }
-</script>
+</script> -->
