@@ -4,16 +4,13 @@ $title = 'register';
 
 ob_start();?>
 <div>
-    <h1>PAGE REGISTER</h1>
-    
-    <?php require_once __DIR__ . '/../partials/show_error.php'; ?>
-    
+    <h2>PAGE REGISTER</h2>
     <form action="/actions/register.php" method="POST">
-        <input type="email" name="email">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="password" name="cpassword">
-        <button type="submit">Register now!</button>
+        <input type="email" name="registerEmail"placeholder="Your Email">
+        <input type="text" name="username" placeholder="Your username">
+        <input type="password" name="registerPassword" placeholder="Mot de passe">
+        <input type="password" name="cpassword"  placeholder="Confirmez votre mot de passe">
+        <button type="submit">S'inscrire</button>
     </form>
 </div>
 <?php
