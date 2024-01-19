@@ -2,8 +2,8 @@
 
 ob_start();
 if(isset($SESSION['id'])){
-$roleInfo = $dbMan->getById2('user', $_SESSION['id'], 'string');
-var_dump($roleInfo[0]);
+    $roleInfo = $dbMan->getById2('user', $_SESSION['id'], 'string');
+    var_dump($roleInfo[0]);
 }
 ?>
 
@@ -28,7 +28,7 @@ var_dump($roleInfo[0]);
             }
             ?>
             <li><a href="/?p=catalogue" id="logo">catalogue</a></li>
-        <?php if ($roleInfo[0] == 'ADMIN') :?>
+        <?php if (isset($_SESSION)|| $roleInfo[0] == 'ADMIN') :?>
             <li><a href="/?p=admin">Panneau d'admin</a></li>
     <?php endif ?>
 </ul>
