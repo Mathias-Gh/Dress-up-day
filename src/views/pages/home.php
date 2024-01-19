@@ -1,5 +1,4 @@
 <?php
-
 $title = 'home';
 
 ob_start();?>
@@ -8,4 +7,7 @@ ob_start();?>
     <h2>Votre look, notre expertise.</h2>
 </main>
 <?php
+
 $page_content = ob_get_clean();
+
+

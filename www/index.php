@@ -22,3 +22,6 @@ require_once __DIR__ . '/../src/views/pages/'. $page .'.php';?>
 <link rel="icon" href="/assets/img/logoDress.png"/>
 <?php
 require_once __DIR__ . '/../src/views/template.php';
+
+
+

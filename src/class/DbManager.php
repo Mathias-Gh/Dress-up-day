@@ -36,6 +36,25 @@ class DbManager {
         $resultat = $req->fetch();
         return $resultat;
     }
+
+    function getById2(string $tableName, $id, string $className) {
+        $req = $this->db->prepare('SELECT role FROM '.$tableName.' WHERE id = ?');
+        $req->execute([$id]);
+        $req->setFetchMode(PDO::FETCH_CLASS, $className);
+        $resultat = $req->fetch();
+        return $resultat;
+    }
+
+    function getById3(string $tableName, $id, string $className) {
+        $req = $this->db->prepare('SELECT PRODUIT_IMAGE FROM '.$tableName.' WHERE id = ?');
+        $req->execute([$id]);
+        $req->setFetchMode(PDO::FETCH_CLASS, $className);
+        var_dump($req);
+        $resultat = $req->fetch();
+        
+        return $resultat;
+    }
+
     function getById_advanced($id, string $className) {
         $tableName = strtolower($className);
         return $this->getById($tableName, $id, $className);
