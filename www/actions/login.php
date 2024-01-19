@@ -27,7 +27,7 @@ require_once __DIR__ . '/../../src/init.php';
         $validPassword = $user->verifyPassword($_POST['loginPassword']);
 
         if ($validPassword) {
-           
+    
             // all good
             $_SESSION['id'] = $user->id;
             header('Location: /?p=home');

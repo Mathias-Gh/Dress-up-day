@@ -5,7 +5,7 @@ $title = 'login';
 ob_start();?>
 <div>
     <h1>Se Connecter</h1>
-    
+    <?php require_once __DIR__ . '/../partials/show_error.php' ?>
     <form action="/actions/login.php" method="POST">
         <input type="email" name="loginEmail"placeholder="Your Email">
         <input type="password" name="loginPassword" placeholder="Mot de passe">
