@@ -14,7 +14,13 @@ if (isset($_GET['p'])) {
 require_once __DIR__ . '/../src/views/partials/navbar.php';
 require_once __DIR__ . '/../src/views/partials/footer.php';
 require_once __DIR__ . '/../src/views/pages/'. $page .'.php';?>
-<link rel="stylesheet" href="/assets/css/register.css"><?php
+<link rel="stylesheet" href="/assets/css/normalize.css">
+<link rel="stylesheet" href="/assets/css/register.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="icon" href="/assets/img/logoDress.png"/>
+<?php
 require_once __DIR__ . '/../src/views/template.php';
 
 

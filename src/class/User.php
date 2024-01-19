@@ -8,13 +8,9 @@ class User {
 	public $password;
 	public $role;
 
-    public function setPassword($password) {
-		$this->password = hash('sha256', $password);
-        return $this->password;
-	}
-
     public function verifyPassword($password) {
 		$hashPassword = hash('sha256', $password);
+		echo $hashPassword;
 		return ($hashPassword === $this->password);
 	}
 }

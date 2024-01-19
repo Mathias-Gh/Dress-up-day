@@ -1,0 +1,12 @@
+main{
+    text-align: center;
+    background-position: center;
+    color: white;
+    font-size: 2rem;
+}
+body{
+    background: url(/assets/img/minimalist-retail-clothing-display.jpg);
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+}
