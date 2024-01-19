@@ -49,9 +49,8 @@ class DbManager {
         $req = $this->db->prepare('SELECT PRODUIT_IMAGE FROM '.$tableName.' WHERE id = ?');
         $req->execute([$id]);
         $req->setFetchMode(PDO::FETCH_CLASS, $className);
-        var_dump($req);
         $resultat = $req->fetch();
-        
+    
         return $resultat;
     }
 
@@ -86,7 +85,6 @@ class DbManager {
             }
         }
         $sql = substr($sql,0,-2);
-        var_dump($sql);
         $req = $this->db->prepare($sql.' WHERE id=:id');
         $req->execute($data);
     }

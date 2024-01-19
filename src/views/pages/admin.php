@@ -22,3 +22,5 @@ ob_start();
 </form>
 
 </div>
+<?php
+$page_content = ob_get_clean();
