@@ -4,8 +4,7 @@ $title = 'register';
 
 ob_start();?>
 <div>
-    <h1>PAGE REGISTER</h1>
-    
+    <h2>PAGE REGISTER</h2>
     <form action="/actions/register.php" method="POST">
         <input type="email" name="registerEmail"placeholder="Your Email">
         <input type="text" name="username" placeholder="Your username">
