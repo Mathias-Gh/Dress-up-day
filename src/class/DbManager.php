@@ -36,7 +36,6 @@ class DbManager {
         $resultat = $req->fetch();
         return $resultat;
     }
-
     function getById_advanced($id, string $className) {
         $tableName = strtolower($className);
         return $this->getById($tableName, $id, $className);

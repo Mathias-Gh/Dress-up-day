@@ -4,7 +4,7 @@ session_start();
 require_once __DIR__ . '/db.php';
 
 // config du site
-$existing_pages = ['home', 'login', 'register', 'disconnect'];
+$existing_pages = ['home', 'login', 'register', 'disconnect', 'catalogue'];
 
 // les classes
 require_once __DIR__ . '/class/User.php';
