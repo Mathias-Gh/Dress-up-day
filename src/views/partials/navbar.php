@@ -1,9 +1,10 @@
 <?php
 
 ob_start();
-
-$roleInfo = $dbMan->getById2('user', 2, 'string');
+if(isset($SESSION['id'])){
+$roleInfo = $dbMan->getById2('user', $_SESSION['id'], 'string');
 var_dump($roleInfo[0]);
+}
 ?>
 
 

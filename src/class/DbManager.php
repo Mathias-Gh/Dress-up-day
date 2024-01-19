@@ -41,7 +41,6 @@ class DbManager {
         $req = $this->db->prepare('SELECT role FROM '.$tableName.' WHERE id = ?');
         $req->execute([$id]);
         $req->setFetchMode(PDO::FETCH_CLASS, $className);
-        var_dump($req);
         $resultat = $req->fetch();
         return $resultat;
     }
