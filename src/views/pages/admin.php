@@ -1,39 +1,24 @@
 <?php
+
 $title = 'admin';
+
 ob_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données envoyées par le client
-    $image = $_POST['image'];
-    $name = $_POST['name'];
-    $prix = $_POST['prix'];
-    $category = $_POST['category'];
 
-    // Instancier la classe Product et appeler la méthode insertProduct
-    $product = new Product($db);
-    $product->insertProduct($image, $name, $prix, $category);
-}
 ?>
-<div>PAGE ADMIN</div>
+<div>
+    
+<h1>PAGE ADMIN</h1>
 
-<form method="post">
-    <label for="fileInput">Sélectionner l'image de l'article à ajouter :</label>
-    <input type="file" id="fileInput" name="fileInput" style="display: none;">
-    <button type="button" onclick="browseFile()">Chercher un fichier</button>
+<form action="/actions/createProduit.php" method="POST">
+    
+    <input type="text" name="newProductName"  placeholder="Rentrez le nom" style="margin-top: 3vh">
 
-    <label for="name">Rentrez le nom de l'article :</label>
-    <input type="text" id="name">
+    <input type="text" name="newProductPrice"  placeholder="Rentrez le prix" style="margin-top: 1vh">
 
-    <label for="prix">Rentrez le prix de l'article</label>
-    <input type="text" id="prix">
+    <label for="fileInput" style="margin-top: 2vh">Sélectionner l'image de l'article à ajouter :</label>
+    <input type="file" id="fileInput" name="newProductImage" style="margin-top: 1vh">
 
-    <label for="category">Rentrez la categorie de l'article</label>
-    <input type="text" id="category">
-
-    <button type="submit" onclick="insertProduct()">Validez votre article</button>
+    <button type="submit" style="margin-top: 4vh">Ajoutez votre article à la BDD</button>
 </form>
 
-<script>
-    function browseFile() {
-        document.getElementById('fileInput').click();
-    }
-</script>
+</div>

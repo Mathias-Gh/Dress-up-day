@@ -2,35 +2,29 @@
 $title = 'home';
 ob_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'] ?? '';
-    $prix = $_POST['prix'] ?? '';
-    $category = $_POST['category'] ?? '';
-
     // Handle file upload
-    if (isset($_FILES['fileInput']) && $_FILES['fileInput']['error'] === UPLOAD_ERR_OK) {
-        $image = $_FILES['fileInput']['name'];
-    } else {
-        $image = '';
-    }
-    // Instancier la classe Product et appeler la méthode insertProduct
-    $product = new Product($db);
-    $product->insertProduct($image, $name, $prix, $category);
-}
+    // if (isset($_FILES['fileInput']) && $_FILES['fileInput']['error'] === UPLOAD_ERR_OK) {
+    //     $image = $_FILES['fileInput']['name'];
+    // } else {
+    //     $image = '';
+    // }
 ?>
 
 <div>
     PAGE HOME
     <?php
-
     if(isset($_SESSION['id'])){?>
-    <form action="/actions/disconnect.php" method="post" class="deconnexion">
-        <input type="submit" class="btn" value="Deconnexion">
-    </form>
-    <?php } else{
+        <form action="/actions/disconnect.php" method="post" class="deconnexion">
+            <input type="submit" class="btn" value="Deconnexion">
+        </form>
+        <?php 
+    }
+    else{
         echo 'buhuu';
     }
-        ?>
+    ?>
+
+    
         
 </div>
 <!-- <form method="post">
@@ -48,12 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="text" id="category">
 
     <button type="submit" onclick="insertProduct()">Validez votre article</button>
-</form>
+</form> -->
+
 <?php
+
 $page_content = ob_get_clean();
-?>
-<script>
-    function browseFile() {
-        document.getElementById('fileInput').click();
-    }
-</script> -->
+
+

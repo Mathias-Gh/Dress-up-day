@@ -50,7 +50,7 @@ if(!isset($_POST['registerEmail']) || !isset($_POST['username']) || !isset($_POS
     }
 } else{
     $user_id = $dbMan->insert(
-    'INSERT INTO  User (email, username, password, role) VALUES(?,?,?,?)',
+    'INSERT INTO  user (email, username, password, role) VALUES(?,?,?,?)',
     [$_POST['registerEmail'], $_POST['username'], $hashPassword = hash('sha256', $password), "CLIENT"]);
     $_SESSION['id'] = $user_id;
 }

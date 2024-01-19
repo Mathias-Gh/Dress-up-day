@@ -27,11 +27,13 @@ require_once __DIR__ . '/../../src/init.php';
         if ($validPassword) {
             // all good
             $_SESSION['id'] = $user->id;
+            var_dump($user);
+            die();
             header('Location: /?p=home');
             die();
         }
     }
 
 header('Location: /?p=home');
-// not good
-// set_errors('Bad login', 'login');
+
+set_errors('Bad login', 'login');
